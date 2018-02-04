@@ -2,7 +2,7 @@
     "name": "sergeyterr/terrlibrary",
     "description": "Php Library",
     "type": "library",
-    "license": "GNU General Public License v2 or later",
+    "license": "MIT",
     "authors": [
         {
             "name": "sergeyterr",
