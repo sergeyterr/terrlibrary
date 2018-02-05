@@ -9,5 +9,11 @@
             "email": "ater123@mail.ru"
         }
     ],
-    "require": {}
+    "bin": ["flatbase"],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Terrlibrary\\Html\\": ["Terrlibrary/"]
+        }
+    }
 }

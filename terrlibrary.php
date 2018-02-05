@@ -13,3 +13,8 @@
  * Domain Path: /lang/
  *
  */
+
+require_once('Terrlibrary/Html/Html.php');
+echo Terrlibrary\Html\Html::arrow('right');
+echo 'ewfew';
+wp_die();
