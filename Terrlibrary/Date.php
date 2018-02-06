@@ -24,7 +24,7 @@ if (! class_exists('Date')) {
          * Get format date
          *
          *  <code>
-         *      echo Terrlibrary/Date::format($date, 'j.n.Y');
+         *      echo Terrlibrary\Date::format($date, 'j.n.Y');
          *  </code>
          *
          * @param  integer $date   Unix timestamp
@@ -45,7 +45,7 @@ if (! class_exists('Date')) {
          * Get number of seconds in a minute, incrementing by a step.
          *
          *  <code>
-         *      $seconds = Terrlibrary/Date::seconds();
+         *      $seconds = Terrlibrary\Date::seconds();
          *  </code>
          *
          * @param  integer $step  Amount to increment each step by, 1 to 30
@@ -68,7 +68,7 @@ if (! class_exists('Date')) {
          * Get number of minutes in a hour, incrementing by a step.
          *
          *  <code>
-         *      $minutes = Terrlibrary/Date::minutes();
+         *      $minutes = Terrlibrary\Date::minutes();
          *  </code>
          *
          * @param  integer $step  Amount to increment each step by, 1 to 30
@@ -91,7 +91,7 @@ if (! class_exists('Date')) {
          * Get number of hours, incrementing by a step.
          *
          *  <code>
-         *      $hours = Terrlibrary/Date::hours();
+         *      $hours = Terrlibrary\Date::hours();
          *  </code>
          *
          * @param  integer  $step  Amount to increment each step by, 1 to 30
@@ -118,7 +118,7 @@ if (! class_exists('Date')) {
          * Get number of months.
          *
          *  <code>
-         *      $months = Terrlibrary/Date::months();
+         *      $months = Terrlibrary\Date::months();
          *  </code>
          *
          * @return array
@@ -132,7 +132,7 @@ if (! class_exists('Date')) {
          * Get number of days.
          *
          *  <code>
-         *      $months = Terrlibrary/Date::days();
+         *      $months = Terrlibrary\Date::days();
          *  </code>
          *
          * @return array
@@ -146,7 +146,7 @@ if (! class_exists('Date')) {
          * Returns the number of days in the requested month
          *
          *  <code>
-         *      $days = Terrlibrary/Date::daysInMonth(1);
+         *      $days = Terrlibrary\Date::daysInMonth(1);
          *  </code>
          *
          * @param  integer $month Month as a number (1-12)
@@ -177,7 +177,7 @@ if (! class_exists('Date')) {
          * Get number of years.
          *
          *  <code>
-         *      $years = Terrlibrary/Date::years();
+         *      $years = Terrlibrary\Date::years();
          *  </code>
          *
          * @param  integer $start   Start value
@@ -198,7 +198,7 @@ if (! class_exists('Date')) {
          * Get current season name
          *
          *  <code>
-         *      echo Terrlibrary/Date::season();
+         *      echo Terrlibrary\Date::season();
          *  </code>
          *
          * @return string
@@ -214,7 +214,7 @@ if (! class_exists('Date')) {
          * Get today date
          *
          *  <code>
-         *      echo Terrlibrary/Date::today();
+         *      echo Terrlibrary\Date::today();
          *  </code>
          *
          * @param  string $format Date format
@@ -237,7 +237,7 @@ if (! class_exists('Date')) {
          * Get yesterday date
          *
          *  <code>
-         *      echo Terrlibrary/Date::yesterday();
+         *      echo Terrlibrary\Date::yesterday();
          *  </code>
          *
          * @param  string $format Date format
@@ -260,7 +260,7 @@ if (! class_exists('Date')) {
          * Get tomorrow date
          *
          *  <code>
-         *      echo Terrlibrary/Date::tomorrow();
+         *      echo Terrlibrary\Date::tomorrow();
          *  </code>
          *
          * @param  string $format Date format
@@ -283,7 +283,7 @@ if (! class_exists('Date')) {
          * Converts a UNIX timestamp to DOS format.
          *
          *  <code>
-         *      $dos = Terrlibrary/Date::unix2dos($unix);
+         *      $dos = Terrlibrary\Date::unix2dos($unix);
          *  </code>
          *
          * @param  integer $timestamp UNIX timestamp
@@ -314,7 +314,7 @@ if (! class_exists('Date')) {
          * Converts a DOS timestamp to UNIX format.
          *
          *  <code>
-         *      $unix = Terrlibrary/Date::dos2unix($dos);
+         *      $unix = Terrlibrary\Date::dos2unix($dos);
          *  </code>
          *
          * @param  integer $timestamp DOS timestamp
@@ -466,7 +466,7 @@ if (! class_exists('Date')) {
 
         /**
          * Проверяем корректность времени и даты
-         * Terrlibrary/Date::validate( $date, $format = 'd.m.Y' )
+         * Terrlibrary\Date::validate( $date, $format = 'd.m.Y' )
          *
          * @param        $date
          * @param string $format
@@ -481,7 +481,7 @@ if (! class_exists('Date')) {
         }
 
         /**
-         * Terrlibrary/Date::betweendate( $day_range, $format = 'd.m.Y' )
+         * Terrlibrary\Date::betweendate( $day_range, $format = 'd.m.Y' )
          * $date_range = '23.10.2017 / 24.10.2017'
          *
          * @param        $day_range
@@ -516,7 +516,7 @@ if (! class_exists('Date')) {
         }
 
         /**
-         * Terrlibrary/Date::between( $date_min, $date_max, $format )
+         * Terrlibrary\Date::between( $date_min, $date_max, $format )
          * $date_min and $date_max  -  '24.10.2017'
          * $format  -  'd.m.Y'
          *

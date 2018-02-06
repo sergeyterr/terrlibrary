@@ -14,7 +14,6 @@
  *
  */
 
-require_once('Terrlibrary/Html/Html.php');
-echo Terrlibrary\Html\Html::arrow('right');
-echo 'ewfew';
+require_once('Terrlibrary/Html.php');
+echo Terrlibrary\Html::arrow('right');
 wp_die();
