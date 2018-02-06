@@ -8,6 +8,7 @@ namespace Terrlibrary;
 if (! class_exists('Date')) {
     class Date
     {
+        protected static $date_format = 'Y-m-d / H:i:s';
         /**
          * Protected constructor since this is a static class.
          *
@@ -15,9 +16,7 @@ if (! class_exists('Date')) {
          */
         protected function __construct()
         {
-            if (! defined('TERRLIBS_DATE_FORMAT')) {
-                define('TERRLIBS_DATE_FORMAT', 'Y-m-d / H:i:s');
-            }
+            // Silens
         }
 
         /**
@@ -229,7 +228,7 @@ if (! class_exists('Date')) {
             if ($format != '') {
                 return date($format);
             } else {
-                return date(TERRLIBS_DATE_FORMAT);
+                return date(Date::$date_format);
             }
         }
 
@@ -252,7 +251,7 @@ if (! class_exists('Date')) {
             if ($format != '') {
                 return date($format, strtotime("-1 day"));
             } else {
-                return date(TERRLIBS_DATE_FORMAT, strtotime("-1 day"));
+                return date(Date::$date_format, strtotime("-1 day"));
             }
         }
 
@@ -275,7 +274,7 @@ if (! class_exists('Date')) {
             if ($format != '') {
                 return date($format, strtotime("+1 day"));
             } else {
-                return date(TERRLIBS_DATE_FORMAT, strtotime("-1 day"));
+                return date(Date::$date_format, strtotime("-1 day"));
             }
         }
 
