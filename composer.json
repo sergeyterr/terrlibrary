@@ -9,7 +9,6 @@
             "email": "ater123@mail.ru"
         }
     ],
-    "bin": ["flatbase"],
     "require": {},
     "autoload": {
         "psr-4": {

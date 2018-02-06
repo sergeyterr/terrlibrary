@@ -1,9 +1,9 @@
 <?php
-// Terrlibrary/Html/Html
-namespace Terrlibrary\Html;
+// Terrlibrary/Html
+namespace Terrlibrary;
 
 /**
- * Terrlibs Library
+ * Terrlibrary Library
  */
 if (!class_exists('Html')) {
     class Html
@@ -67,21 +67,21 @@ if (!class_exists('Html')) {
          *  <code>
          *
          *      // Registering a Html macro
-         *      Html::macro('my_element', function() {
+         *      Terrlibrary\Html::macro('my_element', function() {
          *          return '<element id="monstra">';
          *      });
          *
          *      // Calling a custom Html macro
-         *      echo Html::my_element();
+         *      echo Terrlibrary\Html::my_element();
          *
          *
          *      // Registering a Html macro with parameters
-         *      Html::macro('my_element', function($id = '') {
+         *      Terrlibrary\Html::macro('my_element', function($id = '') {
          *        return '<element id="'.$id.'">';
          *      });
          *
          *      // Calling a custom Html macro with parameters
-         *      echo Html::my_element('monstra');
+         *      echo Terrlibrary\Html::my_element('monstra');
          *
          *  </code>
          *
@@ -98,7 +98,7 @@ if (!class_exists('Html')) {
          * should be passed through this method to prevent XSS injections.
          *
          *    <code>
-         *        echo Html::chars($username);
+         *        echo Terrlibrary\Html::chars($username);
          *    </code>
          *
          * @param  string  $value         String to convert
@@ -116,7 +116,7 @@ if (!class_exists('Html')) {
          * Attributes will be sorted using Html::$attribute_order for consistency.
          *
          *    <code>
-         *        echo '<div'.Html::attributes($attrs).'>'.$content.'</div>';
+         *        echo '<div'.Terrlibrary\Html::attributes($attrs).'>'.$content.'</div>';
          *    </code>
          *
          * @param  array $attributes Attribute list
@@ -164,7 +164,7 @@ if (!class_exists('Html')) {
          * Create br tags
          *
          *    <code>
-         *        echo Html::br(2);
+         *        echo Terrlibrary\Html::br(2);
          *    </code>
          *
          * @param  integer $num Count of line break tag
@@ -180,7 +180,7 @@ if (!class_exists('Html')) {
          * Create &nbsp;
          *
          *    <code>
-         *        echo Html::nbsp(2);
+         *        echo Terrlibrary\Html::nbsp(2);
          *    </code>
          *
          * @param  integer $num Count of &nbsp;
@@ -196,11 +196,10 @@ if (!class_exists('Html')) {
          * Create an arrow
          *
          *    <code>
-         *        echo Html::arrow('right');
+         *        echo Terrlibrary\Html::arrow('right');
          *    </code>
          *
          * @param  string  $direction Arrow direction [up,down,left,right]
-         * @param  boolean $render    If this option is true then render html object else return it
          *
          * @return string
          */
@@ -230,7 +229,7 @@ if (!class_exists('Html')) {
          * Create HTML link anchor.
          *
          *    <code>
-         *        echo Html::anchor('About', 'http://sitename.com/about');
+         *        echo Terrlibrary\Html::anchor('About', 'http://sitename.com/about');
          *    </code>
          *
          * @param string $title      Anchor title
@@ -254,7 +253,7 @@ if (!class_exists('Html')) {
          * Create HTML link anchor.
          *
          *    <code>
-         *        echo Html::span( 'Text span here', array( 'class' => 'white' ) );
+         *        echo Terrlibrary\Html::span( 'Text span here', array( 'class' => 'white' ) );
          *    </code>
          *
          * @param            $text
@@ -271,7 +270,7 @@ if (!class_exists('Html')) {
          * Create HTML <h> tag
          *
          *    <code>
-         *        echo Html::heading('Title', 1);
+         *        echo Terrlibrary\Html::heading('Title', 1);
          *    </code>
          *
          * @param string  $title      Text
@@ -292,7 +291,7 @@ if (!class_exists('Html')) {
          * Generate document type declarations
          *
          *    <code>
-         *        echo Html::doctype('html5');
+         *        echo Terrlibrary\Html::doctype('html5');
          *    </code>
          *
          * @param  string $type Doctype to generated
@@ -323,7 +322,7 @@ if (!class_exists('Html')) {
          * Create image
          *
          *    <code>
-         *    echo Html::image('data/files/pic1.jpg');
+         *    echo Terrlibrary\Html::image('data/files/pic1.jpg');
          *    </code>
          *
          * @param array  $attributes Image attributes
@@ -349,7 +348,7 @@ if (!class_exists('Html')) {
          * Obfuscate an e-mail address to prevent spam-bots from sniffing it.
          *
          *  <code>
-         *    echo Html::email('gelato@monstra.org');
+         *    echo Terrlibrary\Html::email('gelato@monstra.org');
          *    </code>
          *
          * @param  string $email
@@ -384,7 +383,7 @@ if (!class_exists('Html')) {
          * Obfuscate an e-mail address to prevent spam-bots from sniffing it.
          *
          *  <code>
-         *    echo Html::email('gelato@monstra.org');
+         *    echo Terrlibrary\Html::email('gelato@monstra.org');
          *  </code>
          *
          * @param      $phone
@@ -423,7 +422,7 @@ if (!class_exists('Html')) {
          * bot from sniffing the randomly obfuscated letters.
          *
          *  <code>
-         *    echo Html::obfuscate('gelato@monstra.org');
+         *    echo Terrlibrary\Html::obfuscate('gelato@monstra.org');
          *    </code>
          *
          * @param  string $value
@@ -454,7 +453,7 @@ if (!class_exists('Html')) {
          * Convert html to plain text
          *
          *    <code>
-         *    echo Html::toText('test');
+         *    echo Terrlibrary\Html::toText('test');
          *    </code>
          *
          * @param  string $str String
