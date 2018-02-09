@@ -5,7 +5,7 @@ namespace Terrlibrary;
 /**
  * Terrlibs Library
  */
-if (! class_exists('Debug')) {
+if (!class_exists('Debug')) {
     class Debug
     {
         /**

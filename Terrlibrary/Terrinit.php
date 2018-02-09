@@ -20,6 +20,12 @@ if (! class_exists('Dir')) {
             if (! defined('TERRLIBS_DATE_FORMAT')) {
                 define('TERRLIBS_DATE_FORMAT', 'Y-m-d / H:i:s');
             }
+            /**
+             * Здесь задаем - это плагин или тема
+             */
+            if (! defined('TERRLIBSTHEME')) {
+                define('TERRLIBSTHEME', false);
+            }
         }
     }
 }
