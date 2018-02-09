@@ -1,6 +1,7 @@
 <?php
 // Terrlibrary/Debug
 namespace Terrlibrary;
+
 /**
  * Terrlibs Library
  */
@@ -35,7 +36,7 @@ if (! class_exists('Debug')) {
          * Print the variable $data and exit if exit = true
          *
          * <code>
-         *  Debug::printr($data);
+         *  Terrlibrary\Debug::printr($data);
          * </code>
          *
          * @param mixed   $data Data
@@ -53,7 +54,7 @@ if (! class_exists('Debug')) {
          * Print the variable $data and exit if exit = true
          *
          * <code>
-         *  Debug::dump($data);
+         *  Terrlibrary\Debug::dump($data);
          * </code>
          *
          * @param null $mixed
