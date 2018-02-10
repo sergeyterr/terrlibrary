@@ -9,7 +9,7 @@ namespace Terrlibrary;
 if (! class_exists('Terrinit')) {
     class Terrinit
     {
-        public function __construct()
+        public function __construct($istheme = true)
         {
             if (! defined('DS')) {
                 define('DS', DIRECTORY_SEPARATOR);
@@ -21,7 +21,8 @@ if (! class_exists('Terrinit')) {
              * Здесь задаем - это плагин или тема
              */
             if (! defined('TERRLIBSTHEME')) {
-                define('TERRLIBSTHEME', false);
+                $istheme = $istheme ? true : false;
+                define('TERRLIBSTHEME', $istheme);
             }
         }
     }
