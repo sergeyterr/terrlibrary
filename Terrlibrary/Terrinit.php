@@ -4,7 +4,7 @@ namespace Terrlibrary;
 
 /**
  * Terrlibs Library
- * version 1.1.1
+ * version 1.1.2
  */
 if (! class_exists('Terrinit')) {
     class Terrinit
