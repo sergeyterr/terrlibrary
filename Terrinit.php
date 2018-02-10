@@ -24,6 +24,44 @@ if (! class_exists('Terrinit')) {
                 $istheme = $istheme ? true : false;
                 define('TERRLIBSTHEME', $istheme);
             }
+
+            /**
+             * Define __DIR__ constant for PHP 5.2.x
+             */
+            if (! defined('__DIR__')) {
+                define('__DIR__', dirname(__FILE__));
+            }
+
+            $file_dir    = str_replace('\\', '/', __DIR__);
+            $content_dir = untrailingslashit(dirname(dirname(get_stylesheet_directory())));
+            $content_dir = str_replace('\\', '/', $content_dir);
+            $content_url = untrailingslashit(dirname(dirname(dirname(get_stylesheet_uri()))));
+            $file_url    = str_replace($content_dir, $content_url, $file_dir);
+            if (! defined('TERRLIBSURL')) {
+                define('TERRLIBSURL', $file_url);
+            }
+            if (! defined('TERRLIBSDIR')) {
+                define('TERRLIBSDIR', __DIR__);
+            }
+
+            /** Подключаем Air Data Picker */
+            add_action('wp_enqueue_scripts', [__CLASS__, 'terrlibAirDataPicker']);
+            add_action('admin_enqueue_scripts', [__CLASS__, 'terrlibAirDataPicker']);
+        }
+
+        public function terrlibAirDataPicker()
+        {
+            //Подключаем скрипты air-datapicker
+            wp_enqueue_script(
+                'terrlib-air-data-picker-js',
+                TERRLIBSURL . '/AirDataPicker/js/datepicker.min.js',
+                array( 'jquery' ),
+                123456
+            );
+            wp_enqueue_style(
+                'terrlib-air-data-picker-css',
+                TERRLIBSURL . '/AirDataPicker/css/datepicker.min.css'
+            );
         }
     }
 }
