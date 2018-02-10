@@ -58,6 +58,7 @@ if (! class_exists('Terrinit')) {
              * Подключаем Fontawesome
              *
              * https://fontawesome.com
+             * https://fontawesome.com/how-to-use/svg-with-js
              *
              * ver 5.0.6
              */
