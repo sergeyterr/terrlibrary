@@ -73,6 +73,8 @@ if (! class_exists('Image')) {
             if (array_key_exists($key, $this->image_info)) {
                 return $this->image_info[$key];
             }
+
+            return false;
         }
 
         /**
@@ -338,7 +340,13 @@ if (! class_exists('Image')) {
 
             if ($opacity < 100) {
                 if (GD_BUNDLED === 0) {
-                    throw new \RuntimeException(vsprintf("%s(): Setting watermark opacity requires the 'imagelayereffect' function which is only available in the bundled version of GD.", array(__METHOD__)));
+                    throw new \RuntimeException(
+                        vsprintf(
+                            "%s(): Setting watermark opacity requires the 'imagelayereffect' " .
+                            "function which is only available in the bundled version of GD.",
+                            array(__METHOD__)
+                        )
+                    );
                 }
 
                 // Convert alpha to 0-127
@@ -532,7 +540,13 @@ if (! class_exists('Image')) {
         public function rotate($degrees)
         {
             if (GD_BUNDLED === 0) {
-                throw new \RuntimeException(vsprintf("%s(): This method requires the 'imagerotate' function which is only available in the bundled version of GD.", array(__METHOD__)));
+                throw new \RuntimeException(
+                    vsprintf(
+                        "%s(): This method requires the 'imagerotate' function which is only available in the bundled" .
+                        " version of GD.",
+                        array(__METHOD__)
+                    )
+                );
             }
 
             // Redefine vars
@@ -634,10 +648,15 @@ if (! class_exists('Image')) {
             $path_info = pathinfo($file);
 
             if (! is_writable($path_info['dirname'])) {
-                throw new \RuntimeException(vsprintf("%s(): '%s' is not writable.", array(
-                    __METHOD__,
-                    $path_info['dirname'],
-                )));
+                throw new \RuntimeException(
+                    vsprintf(
+                        "%s(): '%s' is not writable.",
+                        array(
+                            __METHOD__,
+                            $path_info['dirname'],
+                            )
+                    )
+                );
             }
 
             // Make sure that quality is between 0 and 100
@@ -658,10 +677,15 @@ if (! class_exists('Image')) {
                     imagepng($this->image, $file, (9 - (round(($quality / 100) * 9))));
                     break;
                 default:
-                    throw new \RuntimeException(vsprintf("%s(): Unable to save to '%s'. Unsupported image format.", array(
-                        __METHOD__,
-                        $path_info['extension'],
-                    )));
+                    throw new \RuntimeException(
+                        vsprintf(
+                            "%s(): Unable to save to '%s'. Unsupported image format.",
+                            array(
+                                __METHOD__,
+                                $path_info['extension'],
+                                )
+                        )
+                    );
             }
 
             // Return Image
