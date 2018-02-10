@@ -129,6 +129,7 @@ if (! class_exists('File')) {
                     @unlink((string) $file);
                 }
 
+                return true;
             } else {
                 // Is string
                 return @unlink((string) $filename);
@@ -304,6 +305,7 @@ if (! class_exists('File')) {
          *
          * @param  string  $filename   The path of the file.
          * @param  string  $content    The content that should be written.
+         * @param  boolean $create_file
          * @param  boolean $append     Should the content be appended if the file already exists?
          * @param  integer $chmod      Mode that should be applied on the file.
          *
@@ -330,7 +332,12 @@ if (! class_exists('File')) {
 
             // Something went wrong
             if ($handler === false) {
-                throw new \RuntimeException(vsprintf("%s(): The file '{$filename}' could not be created. Check if PHP has enough permissions.", array(__METHOD__)));
+                throw new \RuntimeException(
+                    vsprintf(
+                        "%s(): The file '{$filename}' could not be created. Check if PHP has enough permissions.",
+                        array(__METHOD__)
+                    )
+                );
             }
 
             // Store error reporting level
@@ -344,7 +351,12 @@ if (! class_exists('File')) {
 
             // Validate write
             if ($write === false) {
-                throw new \RuntimeException(vsprintf("%s(): The file '{$filename}' could not be created. Check if PHP has enough permissions.", array(__METHOD__)));
+                throw new \RuntimeException(
+                    vsprintf(
+                        "%s(): The file '{$filename}' could not be created. Check if PHP has enough permissions.",
+                        array(__METHOD__)
+                    )
+                );
             }
 
             // Close the file
@@ -437,7 +449,6 @@ if (! class_exists('File')) {
                 finfo_close($info);
 
                 return $mime;
-
             } else {
                 // Just guess mime by using the file extension
                 if ($guess === true) {
