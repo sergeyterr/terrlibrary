@@ -1,6 +1,6 @@
 <?php
-// Myinit/Terrinit
-namespace Myinit;
+// Terrinit/Terrinit
+namespace Terrinit;
 
 /**
  * Terrlibs Library
