@@ -43,7 +43,6 @@ if (! class_exists('Request')) {
             // Is Headers sent ?
             if (headers_sent()) {
                 echo "<script>document.location.href='" . $url . "';</script>\n";
-
             } else {
                 // Redirect headers
                 Request::setHeaders('HTTP/1.1 ' . $status . ' ' . Arr::get($messages, $status, 302));
