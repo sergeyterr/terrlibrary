@@ -44,9 +44,25 @@ if (! class_exists('Terrinit')) {
                 define('TERRLIBSDIR', __DIR__);
             }
 
-            /** Подключаем Air Data Picker */
+            /**
+             * Подключаем Air Data Picker
+             *
+             * http://t1m0n.name/air-datepicker/docs/index-ru.html
+             *
+             * ver 2.2.3
+             */
             add_action('wp_enqueue_scripts', [__CLASS__, 'terrlibAirDataPicker']);
             add_action('admin_enqueue_scripts', [__CLASS__, 'terrlibAirDataPicker']);
+
+            /**
+             * Подключаем Fontawesome
+             *
+             * https://fontawesome.com
+             *
+             * ver 5.0.6
+             */
+            add_action('wp_enqueue_scripts', [__CLASS__, 'terrlibFontawesomeScripts']);
+            add_action('admin_enqueue_scripts', [__CLASS__, 'terrlibFontawesomeScripts']);
         }
 
         public static function terrlibAirDataPicker()
@@ -61,6 +77,14 @@ if (! class_exists('Terrinit')) {
             wp_enqueue_style(
                 'terrlib-air-data-picker-css',
                 TERRLIBSURL . '/AirDataPicker/css/datepicker.min.css'
+            );
+        }
+
+        public static function terrlibFontawesomeScripts()
+        {
+            wp_enqueue_script(
+                'font-awesome',
+                '//use.fontawesome.com/releases/v5.0.6/js/all.js'
             );
         }
     }
