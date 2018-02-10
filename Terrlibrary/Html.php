@@ -86,7 +86,7 @@ if (!class_exists('Html')) {
          *  </code>
          *
          * @param string  $name  Name
-         * @param Closure $macro Macro
+         * @param \Closure $macro Macro
          */
         public static function macro($name, $macro)
         {
@@ -352,6 +352,8 @@ if (!class_exists('Html')) {
          *    </code>
          *
          * @param  string $email
+         * @param  boolean $click
+         * @param  boolean $text
          *
          * @return string
          */
@@ -479,7 +481,7 @@ if (!class_exists('Html')) {
                 return call_user_func_array(Html::$macros[$method], $parameters);
             }
 
-            throw new RuntimeException("Method [$method] does not exist.");
+            throw new \RuntimeException("Method [$method] does not exist.");
         }
     }
 }
