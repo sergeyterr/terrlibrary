@@ -49,7 +49,7 @@ if (! class_exists('Terrinit')) {
             add_action('admin_enqueue_scripts', [__CLASS__, 'terrlibAirDataPicker']);
         }
 
-        public function terrlibAirDataPicker()
+        public static function terrlibAirDataPicker()
         {
             //Подключаем скрипты air-datapicker
             wp_enqueue_script(
