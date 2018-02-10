@@ -223,7 +223,7 @@ if (! class_exists('Valid')) {
          *
          * @return false|int
          */
-        public static function username_exists($username)
+        public static function usernameExists($username)
         {
             return username_exists($username);
         }
@@ -240,7 +240,7 @@ if (! class_exists('Valid')) {
          *
          * @return false|int
          */
-        public static function email_exists($email)
+        public static function emailExists($email)
         {
             return email_exists($email);
         }
@@ -255,7 +255,7 @@ if (! class_exists('Valid')) {
          *
          * @return bool
          */
-        public static function shortcode_exists($tag)
+        public static function shortcodeExists($tag)
         {
             return shortcode_exists($tag);
         }
@@ -270,7 +270,7 @@ if (! class_exists('Valid')) {
          *
          * @return bool
          */
-        public static function post_type_exists($post_type)
+        public static function postTypeExists($post_type)
         {
             return post_type_exists($post_type);
         }
@@ -285,7 +285,7 @@ if (! class_exists('Valid')) {
          *
          * @return bool
          */
-        public static function taxonomy_exists($taxonomy)
+        public static function taxonomyExists($taxonomy)
         {
             return taxonomy_exists($taxonomy);
         }
@@ -313,7 +313,7 @@ if (! class_exists('Valid')) {
          *
          * @return mixed
          */
-        public static function term_exists($term, $taxonomy = '', $parent = '')
+        public static function termExists($term, $taxonomy = '', $parent = '')
         {
             return term_exists($term, $taxonomy, $parent);
         }
@@ -328,7 +328,7 @@ if (! class_exists('Valid')) {
          *
          * @return mixed
          */
-        public static function tag_exists($tag_name)
+        public static function tagExists($tag_name)
         {
             return tag_exists($tag_name);
         }
@@ -355,7 +355,7 @@ if (! class_exists('Valid')) {
          *
          * @return int
          */
-        public static function post_exists($title, $content = '', $date = '')
+        public static function postExists($title, $content = '', $date = '')
         {
             return post_exists($title, $content, $date);
         }
@@ -374,7 +374,7 @@ if (! class_exists('Valid')) {
          *
          * @return mixed
          */
-        public static function category_exists($cat_name, $parent = null)
+        public static function categoryExists($cat_name, $parent = null)
         {
             return category_exists($cat_name, $parent);
         }
@@ -390,7 +390,7 @@ if (! class_exists('Valid')) {
          *
          * @return bool
          */
-        public static function validate_boolean($var)
+        public static function validateBoolean($var)
         {
             return wp_validate_boolean($var);
         }
@@ -405,7 +405,7 @@ if (! class_exists('Valid')) {
          *
          * @return false|string
          */
-        public static function validate_url($url)
+        public static function validateUrl($url)
         {
             return wp_http_validate_url($url);
         }

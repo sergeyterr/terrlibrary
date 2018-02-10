@@ -1,16 +1,16 @@
 <?php
-// Terrlibrary/Init
+// Terrlibrary/Terrinit
 namespace Terrlibrary;
 
 /**
  * Terrlibs Library
  */
-if (! class_exists('Dir')) {
+if (! class_exists('Terrinit')) {
     class Terrinit
     {
         protected function __construct()
         {
-            // Silens gold
+            init();
         }
         public static function init()
         {
@@ -29,4 +29,3 @@ if (! class_exists('Dir')) {
         }
     }
 }
-Terrinit::init();
