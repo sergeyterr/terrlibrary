@@ -129,7 +129,7 @@ if (! class_exists('Dir')) {
          *
          * @param $dir
          *
-         * @return array
+         * @return array|boolean
          */
         public static function scan($dir)
         {
@@ -147,6 +147,8 @@ if (! class_exists('Dir')) {
 
                 return $f;
             }
+
+            return false;
         }
 
         /**
