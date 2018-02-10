@@ -4,16 +4,12 @@ namespace Terrlibrary;
 
 /**
  * Terrlibs Library
- * version 1.1.0
+ * version 1.1.1
  */
 if (! class_exists('Terrinit')) {
     class Terrinit
     {
-        protected function __construct()
-        {
-            init();
-        }
-        public static function init()
+        public function __construct()
         {
             if (! defined('DS')) {
                 define('DS', DIRECTORY_SEPARATOR);
