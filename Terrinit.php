@@ -74,6 +74,31 @@ if (!class_exists('Terrinit')) {
              */
             add_action('wp_enqueue_scripts', [__CLASS__, 'terrlibRemodal']);
             add_action('admin_enqueue_scripts', [__CLASS__, 'terrlibRemodal']);
+
+            /**
+             * Поиск в опциях тега select по первым буквам
+             *
+             * https://harvesthq.github.io/chosen/
+             * https://github.com/harvesthq/chosen
+             * https://github.com/harvesthq/chosen/releases
+             *
+             * ver 1.8.3
+             *
+             * add_action( 'wp_footer', 'terrlib_test' );
+             * add_action( 'admin_footer', 'terrlib_test' );
+             * function terrlib_test()
+             * {
+             * ?>
+             * <script>
+             * jQuery(document).ready(function($){
+             *  $(".chosen-select").chosen()
+             * });
+             * </script>
+             * <?php
+             * }
+             */
+            add_action('wp_enqueue_scripts', [__CLASS__, 'terrlibChosen']);
+            add_action('admin_enqueue_scripts', [__CLASS__, 'terrlibChosen']);
         }
 
         public static function terrlibAirDataPicker()
@@ -117,6 +142,23 @@ if (!class_exists('Terrinit')) {
                 TERRLIBSURL . '/Remodal/remodal.min.js',
                 array( 'jquery' ),
                 '27653789'
+            );
+        }
+
+        public static function terrlibChosen()
+        {
+            // Подключаем стили
+            wp_enqueue_style(
+                'terrlib-chosen-style',
+                TERRLIBSURL . '/Chosen/chosen.min.css'
+            );
+
+            // Подключаем скрипты
+            wp_enqueue_script(
+                'terrlib-chosen-js',
+                TERRLIBSURL . '/Chosen/chosen.jquery.min.js',
+                array( 'jquery' ),
+                '123456765'
             );
         }
     }
