@@ -99,6 +99,16 @@ if (!class_exists('Terrinit')) {
              */
             add_action('wp_enqueue_scripts', [__CLASS__, 'terrlibChosen']);
             add_action('admin_enqueue_scripts', [__CLASS__, 'terrlibChosen']);
+
+            /**
+             * Красивые всплывающие окна вместо alert
+             * https://sweetalert2.github.io/
+             * https://github.com/sweetalert2/sweetalert2
+             *
+             * ver 7.11.0
+             */
+            add_action('wp_enqueue_scripts', [__CLASS__, 'terrlibSweetalert']);
+            add_action('admin_enqueue_scripts', [__CLASS__, 'terrlibSweetalert']);
         }
 
         public static function terrlibAirDataPicker()
@@ -160,6 +170,34 @@ if (!class_exists('Terrinit')) {
                 array( 'jquery' ),
                 '123456765'
             );
+        }
+
+        public static function terrlibSweetalert()
+        {
+            //Подключаем стили и скрипты sweetalert
+            wp_enqueue_script(
+                'terrlib-sweetalert-all-js',
+                TERRLIBSURL . '/Sweetalert2/sweetalert2.all.min.js',
+                array('jquery'),
+                123456,
+                true
+            );
+            wp_enqueue_script(
+                'terrlib-polyfill-sweetalert-js',
+                'https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js',
+                array( 'terrlib-sweetalert-js' ),
+                123456
+            );
+            /*wp_enqueue_script(
+                'terrlib-sweetalert-js',
+                TERRLIBSURL . '/Sweetalert2/sweetalert2.min.js',
+                array( 'jquery' ),
+                '123456765'
+            );
+            wp_enqueue_style(
+                'decor-market-sweetalert-admin-css',
+                TERRLIBSURL . '/Sweetalert2/sweetalert2.min.css'
+            );*/
         }
     }
 }
