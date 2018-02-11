@@ -64,6 +64,16 @@ if (!class_exists('Terrinit')) {
              */
             add_action('wp_enqueue_scripts', [__CLASS__, 'terrlibFontawesomeScripts']);
             add_action('admin_enqueue_scripts', [__CLASS__, 'terrlibFontawesomeScripts']);
+
+            /**
+             * Подключаем Всплывающие окна
+             * http://vodkabears.github.io/remodal/
+             * https://github.com/VodkaBears/Remodal#closeonconfirm
+             *
+             * ver 1.1.1
+             */
+            add_action('wp_enqueue_scripts', [__CLASS__, 'terrlibRemodal']);
+            add_action('admin_enqueue_scripts', [__CLASS__, 'terrlibRemodal']);
         }
 
         public static function terrlibAirDataPicker()
@@ -86,6 +96,27 @@ if (!class_exists('Terrinit')) {
             wp_enqueue_script(
                 'font-awesome',
                 '//use.fontawesome.com/releases/v5.0.6/js/all.js'
+            );
+        }
+
+        public static function terrlibRemodal()
+        {
+            // Подключаем стили
+            wp_enqueue_style(
+                'terrlib-remodal-style',
+                TERRLIBSURL . '/Remodal/remodal.css'
+            );
+            wp_enqueue_style(
+                'terrlib-remodal-theme-style',
+                TERRLIBSURL . '/Remodal/remodal-default-theme.css'
+            );
+
+            // Подключаем скрипты
+            wp_enqueue_script(
+                'terrlib-remodal-js',
+                TERRLIBSURL . '/Remodal/remodal.min.js',
+                array( 'jquery' ),
+                '27653789'
             );
         }
     }
